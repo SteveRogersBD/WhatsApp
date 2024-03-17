@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "1088986360729",
+    "firebase_url": "https://fir-eabdc-default-rtdb.firebaseio.com",
+    "project_id": "fir-eabdc",
+    "storage_bucket": "fir-eabdc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1088986360729:android:aa86fccf1487cfd1fbc108",
+        "android_client_info": {
+          "package_name": "com.example.fbpractise"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChZ1kw0y0mte6XzhoUDjkQHK3O3WnvJXg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1088986360729:android:bdf908bc0d3c52d6fbc108",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChZ1kw0y0mte6XzhoUDjkQHK3O3WnvJXg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1088986360729:android:5acbf2d90bcfa8c4fbc108",
+        "android_client_info": {
+          "package_name": "com.example.whatsappclone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChZ1kw0y0mte6XzhoUDjkQHK3O3WnvJXg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
