@@ -84,6 +84,12 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
+//        if(auth.getCurrentUser()!=null)
+//        {
+//            Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+//            startActivity(intent);
+//        }
+
 
 
     }
