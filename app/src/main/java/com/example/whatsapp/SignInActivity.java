@@ -80,6 +80,8 @@ public class SignInActivity extends AppCompatActivity {
         binding.btnGoogleSi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog.setTitle("We are getting into your account.");
+                progressDialog.show();
                 googleSignIn();
             }
         });
@@ -91,6 +93,11 @@ public class SignInActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+//        if(auth.getCurrentUser()!=null)
+//        {
+//            Intent intent = new Intent(SignInActivity.this,MainActivity.class);
+//            startActivity(intent);
+//        }
     }
 
     private void googleSignIn() {
@@ -121,16 +128,18 @@ public class SignInActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        progressDialog.dismiss();
                         if (task.isSuccessful()) {
                             FirebaseUser user = auth.getCurrentUser();
                             if (user != null) {
                                 HashMap<String, Object> map = new HashMap<>();
                                 map.put("id", user.getUid());
                                 map.put("name", user.getDisplayName());
+                                map.put("email",user.getEmail());
                                 if (user.getPhotoUrl() != null) {
                                     map.put("profile", user.getPhotoUrl().toString());
                                 }
-                                database.getReference().child("users").child(user.getUid()).setValue(map);
+                                database.getReference().child("Users").child(user.getUid()).setValue(map);
                             }
                             Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                             startActivity(intent);
