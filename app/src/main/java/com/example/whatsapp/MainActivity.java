@@ -48,6 +48,11 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this,SignInActivity.class);
             startActivity(intent);
         }
+        else if(id==R.id.chat_room)
+        {
+            Intent intentt = new Intent(MainActivity.this,ChatRoomActivity.class);
+            startActivity(intentt);
+        }
         return super.onOptionsItemSelected(item);
     }
 }

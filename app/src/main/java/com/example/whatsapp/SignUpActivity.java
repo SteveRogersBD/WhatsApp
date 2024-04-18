@@ -152,14 +152,14 @@ public class SignUpActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             FirebaseUser user = auth.getCurrentUser();
                             if (user != null) {
-                                HashMap<String, Object> map = new HashMap<>();
-                                map.put("id", user.getUid());
-                                map.put("name", user.getDisplayName());
-                                map.put("email",user.getEmail());
+                                Users users = new Users();
+                                users.setUserId(user.getUid());
+                                users.setUserName(user.getDisplayName());
+                                users.setMail(user.getEmail());
                                 if (user.getPhotoUrl() != null) {
-                                    map.put("profile", user.getPhotoUrl().toString());
+                                    users.setProfPic(user.getPhotoUrl().toString());
                                 }
-                                database.getReference().child("Users").child(user.getUid()).setValue(map);
+                                database.getReference().child("Users").child(user.getUid()).setValue(users);
                             }
                             Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                             startActivity(intent);

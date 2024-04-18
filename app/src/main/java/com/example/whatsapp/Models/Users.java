@@ -12,6 +12,9 @@ public class Users {
         this.lastMsg = lastMsg;
     }
 
+    public Users() {
+    }
+
     public Users(String userName, String mail, String password)
     {
         //SignUp constructor
@@ -52,7 +55,7 @@ public class Users {
         this.password = password;
     }
 
-    public String getUserId() {
+    public String getUserId(String key) {
         return userId;
     }
 
@@ -68,4 +71,7 @@ public class Users {
         this.lastMsg = lastMsg;
     }
 
+    public String getUserId() {
+        return this.userId;
+    }
 }
