@@ -59,6 +59,12 @@ public class SignInActivity extends AppCompatActivity {
         binding.btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(binding.emailEtSi.getText().toString().isEmpty()){
+                    binding.emailEtSi.setError("Enter your email");
+                }
+                if(binding.pwEtSi.getText().toString().isEmpty()){
+                    binding.pwEtSi.setError("Enter your password");
+                }
                 progressDialog.show();
                 auth.signInWithEmailAndPassword(binding.emailEtSi.getText().toString(),
                         binding.pwEtSi.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -94,11 +100,11 @@ public class SignInActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//        if(auth.getCurrentUser()!=null)
-//        {
-//            Intent intent = new Intent(SignInActivity.this,MainActivity.class);
-//            startActivity(intent);
-//        }
+        if(auth.getCurrentUser()!=null)
+        {
+            Intent intent = new Intent(SignInActivity.this,MainActivity.class);
+            startActivity(intent);
+        }
     }
 
     private void googleSignIn() {

@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         auth = FirebaseAuth.getInstance();
 
         binding.viewPager.setAdapter(new FragmentAdapters(getSupportFragmentManager()));
@@ -52,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
         {
             Intent intentt = new Intent(MainActivity.this,ChatRoomActivity.class);
             startActivity(intentt);
+        }
+        else if(id==R.id.settings_menu)
+        {
+            Intent intenttt = new Intent(MainActivity.this,SettingsActivity.class);
+            startActivity(intenttt);
         }
         return super.onOptionsItemSelected(item);
     }

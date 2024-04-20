@@ -75,6 +75,9 @@ public class ChatRoomActivity extends AppCompatActivity {
         binding.sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(binding.sendMessageEt.getText().toString().isEmpty()){
+                    binding.sendMessageEt.setError("Enter your message");
+                }
                 final String message = binding.sendMessageEt.getText().toString();
                 final MessageModel model = new MessageModel(senderId,message);
                 model.setTimeStamp(new Date().getTime());
